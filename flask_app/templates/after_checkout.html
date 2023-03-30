@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheckOut Completed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='/static/style.css')}}"> -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
+
+  <!-- *******this following line is ONLY for testing without starting server ***** -->
+  <!-- <link rel="stylesheet" type="text/css" href="/static/css/style.css"> -->
+</head>
+
+<nav>
+  <div class="d-flex mx-5 my-2 justify-content-between">
+    <img class="icon" src="{{ url_for('static', filename='/imgs/logo.png') }}" onclick="">
+    
+    <div> <!-- navlinks -->
+      <a href="/"><button class="btn" style="margin-left: 525px;">Home</button></a>
+
+      <img class="icon" src="{{ url_for('static', filename='/imgs/icecream.png') }}" >
+      <a href="/products"><button class="btn">Products</button></a>
+      
+      <!-- <a class="btn-btn" href="/products">Products</a> -->
+      <img class="icon" src="{{ url_for('static', filename='/imgs/icecream.png') }}" >
+      <a href=""><button class="btn" style="white-space: nowrap;">Contact Us</button></a>
+      <img class="icon" src="{{ url_for('static', filename='/imgs/icecream.png') }}" >
+    </div>
+    <div>
+      <img class="icon" src="{{ url_for('static', filename='imgs/Sample_User_Icon.png') }}" onclick=""> 
+      <a href="/checkout">
+        <img class="icon" src="{{ url_for('static', filename='imgs/shopping_cart_icon_172223.png') }}">
+      </a>
+    </div> 
+  </div>
+</nav>
+
+<body>
+
+  <div style="height: 200px bg-light">
+    <div class="card bg-light align-center">
+      <div class="card-img-overlay align-center">
+        <!-- <img class="rounded mx-auto d-block icon " src="{{ url_for('static', filename='imgs/confetti.png') }}"> -->
+        <h2 class="card-text text-center"> Hello User</h2>
+          <h2 class="text-center"> Your order has been successfuly placed! </h2>
+          <div class="text-center">  <a class="  btn-btn " href="/products">Explore more flavors </a></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

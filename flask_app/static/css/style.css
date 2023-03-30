@@ -1,0 +1,16 @@
+.icon {
+  height: 50px;
+}
+
+.yesno {
+  height: 10px;
+}
+
+.detail_pic {
+  height: 400px;
+  border-radius: 10px;
+}
+
+.dashboard_pic {
+  height: 200px;
+}

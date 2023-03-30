@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | Frosty Delight</title>
+  <!-- Ice Cream Logo Icon for Browser Tab Icon -->
+  <link rel="icon" href="{{ url_for('static', filename='/imgs/icecream.png') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+</head>
+
+<body class="background">
+  <div class="header">
+    <div class="logo"><!--Company Logo-->
+      <img style="margin-top: 10px; margin-left: 10px;" src="{{ url_for('static', filename='/imgs/logo.png') }}" alt="logo" class="logo">
+    </div>
+    <div class="header2"> <!-- navlinks -->
+        <div class="links">
+        <a href="/"><button class="btn" style="margin-left: 650px;">Home</button></a>
+        </div>
+        <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+        <div class="links">
+        <a href=""><button class="btn">Products</button></a>
+        </div>
+        <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+        <div class="links">
+        <a href=""><button class="btn">Company</button></a>
+        </div>
+        <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+        <div class="links">
+        <a href=""><button class="btn" style="white-space: nowrap;">Contact Us</button></a>
+        </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-around">
+
+    <div class="contents">
+      <div class="info">
+        <form action="/login/user" method="POST">
+          {% with messages = get_flashed_messages(category_filter=['login']) %}
+          {% if messages %}
+          <div>
+            <p class="alert alert-danger">{{messages}}</p>
+          </div>
+          {% endif %}
+          {% endwith %}
+
+          <h2 class="d-flex justify-content-center" style="color:  rgb(248, 180, 97);">Login In</h2>
+          <div class="form-group">
+            <label>Email*</label>
+            <input type="text" name="email" placeholder="Please enter your email" class="form-control my-1">
+          </div>
+          <div class="form-group">
+            <label>Password*</label>
+            <input type="password" name="password" placeholder="Please enter your password" class="form-control my-1">
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="button my-2 w-75"> Log In </button>
+          </div>
+          <div class="d-flex justify-content-center">
+            <p>Don't have an account?</p>
+            <a href="/register" class="mx-4">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

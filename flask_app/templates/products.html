@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/css/products.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header2"> <!-- navlinks -->
+          <div class="links">
+            <a href="/"><button class="btn" style="margin-left: 525px;">Home</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+            <a href=""><button class="btn">Company</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+            <a href=""><button class="btn" style="white-space: nowrap;">Contact Us</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+            <a href="/login"><button class="btn">Login</button></a>
+          </div>
+          <a href="/checkout">
+            <img class="icon" src="{{ url_for('static', filename='imgs/shopping_cart_icon_172223.png') }}">
+          </a>
+      </div>
+    </div>
+  </div>
+  <!-- <a href="/orders">Ice cream</a> -->
+  <main class="top_main">
+    <h1 class="order">Ice Cream Order List</h1>
+    <table class="align-center" >
+      <thead class="table_head">
+        <tr>
+          <th style="margin-left:30px; display:flex;">Image</th>
+          <th>Flavor</th>
+          <th>Price</th>
+          <th style="margin-left:30px; display:flex;">Order</th>
+        </tr>
+      </thead>
+      {% for order in orders %}
+      <tbody class="product_table">
+        <tr scope="row">
+          <td ><img class="ice-cream" src="{{order.image}}"></td>
+          <td>{{order.flavor}}</td>
+          <td>${{order.price}}</td>
+          <td>
+            <div class="form-group">
+            <form method ="post" action="/add_to_cart">
+              <input type="hidden" name="order_id" value="{{ order.id }}">
+              <input type="number" name="quantity" value="1" min="1">
+              <button type="submit">Add to Cart</button>
+            </form>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+
+  </main>
+</body>
+
+</html>

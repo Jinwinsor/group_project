@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frosty Delights - Home Page</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
+  <!-- Ice Cream Logo Icon for Browser Tab Icon -->
+  <link rel="icon" href="{{ url_for('static', filename='/imgs/icecream.png') }}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo"><!--Company Logo-->
+        <img style="margin-top: 10px; margin-left: 10px;" src="{{ url_for('static', filename='/imgs/logo.png') }}" alt="logo" class="logo">
+      </div>
+      <div class="header2"> <!-- navlinks -->
+          <div class="links">
+          <a href="/"><button class="btn" style="margin-left: 525px;">Home</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+            <a href="/products"><button class="btn">Products</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+            <a href=""><button class="btn">Company</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+            <a href=""><button class="btn" style="white-space: nowrap;">Contact Us</button></a>
+          </div>
+          <img class="image" src="{{ url_for('static', filename='/imgs/icecream.png') }}" alt="logo" class="icecream">
+          <div class="links">
+          <a href="/login"><button class="btn">Login</button></a>
+          </div>
+      </div>
+    </div>
+    <!--Banner Action-->
+    <div class="banner">
+      <img class="banner-image" src="{{ url_for('static', filename='/imgs/banner.png') }}" alt="logo" class="icecream">
+    </div>
+    <div class="home-info">
+      <div class="contents">
+        <h1 class="h1">Contact Us</h1>
+        <p class="p">Email Us | frostydelights@gmail.com</p>
+        <p class="p">Customer Service | 808-876-8343</p>
+        <p class="p">Here at Frosty Delights we value customer feedback! Leave a review and let us know how we are doing. </p>
+
+      </div>
+      <div class="contents">
+        <h1 class="h1">Social Media</h1>
+        <p class="p"> - <a href="https://www.facebook.com/frostydelights">Facebook</a></p>
+        <p class="p"> - <a href="https://www.instagram.com/frostydelights">Instagram</a></p>
+        <p class="p"> - <a href="https://www.twitter.com/frostydelights">Twitter</a></p>
+        <p class="p"> - Snapchat | @FrostyDelights</p>
+
+      </div>
+      <div class="contents">
+        <h1 class="h1">Rewards Program</h1>
+        <p class="p">With our Frosty Rewards Program, members can enjoy multiple perks.</p>
+        <p class="p"> - Save an extra 25 cents off per cone on Sundays (In-store).</p>
+        <p class="p"> - Earn reward points and redeem for free products! $1 spent earns 1 point.</p>
+        <p class="p"> - </p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="{{ url_for('static', filename='/imgs/review_1.png') }}" alt="review" class="review">
+      <img src="{{ url_for('static', filename='/imgs/review_2.png') }}" alt="review" class="review">
+      <img src="{{ url_for('static', filename='/imgs/review_3.png') }}" alt="review" class="review">
+    </div>
+  </div>
+
+</body>
+
+</html>
